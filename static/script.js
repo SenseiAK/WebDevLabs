@@ -48,35 +48,56 @@ function findTheBananaForEach(arr) {
     }
   });
 }
-
+function validateForm() {
+  const form = document.getElementById("contactForm");
+  const errorDiv = document.getElementById("errorMsg");
+  
+  if(!form.checkValidity()) {
+      errorDiv.style.display = "block";
+      errorDiv.textContent = "Please fill out all required fields";
+      return false;
+  }
+  return true;
+}
 findTheBananaForEach(L1);
 findTheBananaForEach(L2);
 
+function addYear() {
+  const year = new Date().getFullYear();
+  document.getElementById("copyYear").textContent = year;
+}
+function showList() {
+  document.querySelector(".hidden-list").style.display = "block";
+  document.getElementById("showListBtn").style.display = "none";
+}
 function greetingFunc() {
-  let d = new Date();
-  let h = d.getHours();
-  let greeting = "";
-  if (h < 12) {
-    greeting = "Good morning";
-  } else if (h >= 12 && h < 18) {
-    greeting = "Good afternoon";
-  } else if (h >= 18 && h < 20) {
-    greeting = "Good evening";
-  } else if ((h >= 20 && h <= 23) || (h >= 0 && h < 5)) {
-    greeting = "Good night";
-  } else {
-    greeting = "Hello";
-  }
-  if (window.location.href.indexOf("index.html") !== -1 || window.location.pathname === "/") {
+    let d = new Date();
+    let h = d.getHours();
+    let greeting = "";
+    if (h < 12) {
+      greeting = "Good morning";
+    } else if (h >= 12 && h < 18) { // Covers 12 PM to 5:59 PM
+      greeting = "Good afternoon";
+    } else if (h >= 18 && h < 20) { // Covers 6 PM to 7:59 PM
+      greeting = "Good evening";
+    } else { // Covers 8 PM to 11:59 PM and 0 AM to 4:59 AM
+      greeting = "Good night";
+    }
+    if (window.location.href.indexOf("index.html") !== -1 || window.location.pathname === "/") {
     let greetingElem = document.getElementById("greeting");
     if (greetingElem) {
-      greetingElem.innerHTML = greeting;
+      greetingElem.innerHTML = greeting +  ", my name is Jerry";
     }
   } else {
     console.log(greeting);
   }
 }
-
+$(document).ready(function() {
+  $('#readToggle').click(function() {
+      $('.extended-bio').toggle();
+      $(this).text($(this).text() === 'Read More' ? 'Read Less' : 'Read More');
+  });
+});
 if (window.location.href.indexOf("index.html") !== -1 || window.location.pathname === "/") {
   greetingFunc();
 }
