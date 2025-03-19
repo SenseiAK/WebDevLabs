@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="static/style.css">
     <script src="static/script.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
+</head onload="addYear(); greetingFunc();">
 <body>
     <header>
         <h1 id="webname">Jerry Chen</h1>
@@ -26,12 +26,18 @@
     <div class="main">
         <h2 id="greeting"></h2>
         <img src="static/profile.jpeg" width="200">
-        <p id="intro">Welcome to my very cool website! I'm an Information Systems student... <span class="extended-bio">[additional bio text]</span></p>
-        <button id="readToggle">Read More</button>    
+        <p id="intro">Welcome to my very cool website! 
+            <div class="extended-bio">
+                <p>I am currently an Information Systems student at Carnegie Mellon University, 
+                set to graduate in 2027. My academic focus combines technical expertise with 
+                business strategy, and I'm passionate about developing innovative solutions 
+                to complex problems.</p>
+            </div>
+            <button id="readToggle">Read More</button>
+        </div>
     </div>
 
     <footer>
-        <p>&copy; Jerry Chen Inc. All rights reserved.</p>
-    </footer>
+        <p>&copy; Jerry Chen Inc. All rights reserved. Current year: <span id="copyYear"></span></p>
 </body>
 </html>

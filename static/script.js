@@ -38,8 +38,8 @@ function findTheBanana(arr) {
   }
 }
 
-findTheBanana(L1);
-findTheBanana(L2);
+// findTheBanana(L1);
+// findTheBanana(L2);
 
 function findTheBananaForEach(arr) {
   arr.forEach(item => {
@@ -59,8 +59,8 @@ function validateForm() {
   }
   return true;
 }
-findTheBananaForEach(L1);
-findTheBananaForEach(L2);
+// findTheBananaForEach(L1);
+// findTheBananaForEach(L2);
 
 function addYear() {
   const year = new Date().getFullYear();
@@ -93,16 +93,14 @@ function greetingFunc() {
   }
 }
 $(document).ready(function() {
+  $('.extended-bio').hide();
   $('#readToggle').click(function() {
-      $('.extended-bio').toggle();
-      $(this).text($(this).text() === 'Read More' ? 'Read Less' : 'Read More');
+      $('.extended-bio').slideToggle(400);
+      $(this).text(function(i, text) {
+          return text === "Read More" ? "Read Less" : "Read More";
+      });
   });
-});
-if (window.location.href.indexOf("index.html") !== -1 || window.location.pathname === "/") {
-  greetingFunc();
-}
-
-document.addEventListener("DOMContentLoaded", function() {
+});document.addEventListener("DOMContentLoaded", function() {
   let btn = document.getElementById("findBananaBtn");
   if (btn) {
     btn.addEventListener("click", function() {
