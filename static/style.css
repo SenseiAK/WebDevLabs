@@ -52,9 +52,8 @@ input[type="submit"] {
     cursor: pointer;
 
 .hidden-list {
-    display: none;
+    display: none !important; 
 }
-
 #showListBtn {
     background-color: #2c5f2d;
     color: white;

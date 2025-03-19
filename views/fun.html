@@ -32,7 +32,21 @@
             <li>Chefing it up</li>
             <img src="../static/elevator.jpeg" width="200">
         </ul>
-    </div>
+        <script>
+            document.querySelector('.hidden-list').style.display = 'none';
+    
+            document.getElementById('showListBtn').addEventListener('click', function() {
+                const list = document.querySelector('.hidden-list');
+                if (list.style.display === 'none') {
+                    list.style.display = 'block';
+                    this.textContent = 'Click to hide my hobbies'; 
+                } else {
+                    list.style.display = 'none';
+                    this.textContent = 'Click to see my hobbies'; 
+                }
+            });
+        </script>
+        </div>
 
     <footer>
         <p>&copy; Jerry Chen Inc. All rights reserved. Current year: <span id="copyYear"></span></p>
