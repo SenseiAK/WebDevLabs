@@ -23,7 +23,20 @@
         </nav>
     </header>
 
-    <div class="main">
+    <div class="mainLayout">
+        <div class="item1">
+            <h2>Find Me</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.299758623926!2d-79.94287268460342!3d40.44351197936189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8834f22a49d5f915%3A0x4a9d161d5e5a4a0!2sCarnegie%20Mellon%20University!5e0!3m2!1sen!2sus!4v1629999999999!5m2!1sen!2sus" 
+                    width="600" height="450" style="border:0;" allowfullscreen></iframe>
+        </div>
+        <div class="item2">
+            <h2>Contact Me</h2>
+            <form id="contactForm" onsubmit="return validateForm()">
+                <!-- Keep form elements -->
+                <div id="errorMsg" class="error-message"></div>
+            </form>
+        </div>
+    </div>
         <h2>Contact Me</h2>
         <form action="mailto:jerrychen@cmu.edu" method="post">
             <label for="name">Name:</label>
@@ -39,12 +52,6 @@
             <div id="validationMessage" style="display: none; color: red; margin-top: 10px;">
                 Please fill out all fields so I can get back to you!
             </div>
-        </form>
-        <form id="contactForm" onsubmit="return validateForm()">
-            <!-- existing form elements -->
-            <div id="errorMsg" class="error-message"></div>
-        </form>
-
         <h3>Contact Information</h3>
         <table border="1">
             <tr>

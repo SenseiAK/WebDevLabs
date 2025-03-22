@@ -66,10 +66,10 @@ function addYear() {
   const year = new Date().getFullYear();
   document.getElementById("copyYear").textContent = year;
 }
-function showList() {
-  document.querySelector(".hidden-list").style.display = "block";
-  document.getElementById("showListBtn").style.display = "none";
-}
+// function showList() {
+//   document.querySelector(".hidden-list").style.display = "block";
+//   document.getElementById("showListBtn").style.display = "none";
+// }
 function greetingFunc() {
     let d = new Date();
     let h = d.getHours();
@@ -108,3 +108,38 @@ $(document).ready(function() {
     });
   }
 });
+function getAdvice() {
+  fetch('https://api.adviceslip.com/advice')
+      .then(response => response.json())
+      .then(data => {
+          document.getElementById('adviceText').textContent = data.slip.advice;
+      })
+      .catch(error => {
+          console.error('Error:', error);
+          document.getElementById('adviceText').textContent = 
+              "Failed to load advice. Please try again.";
+      });
+}
+
+// Enhanced Validation
+function validateForm() {
+  const inputs = document.querySelectorAll('#contactForm input, #contactForm textarea');
+  let isValid = true;
+  
+  inputs.forEach(input => {
+      if (!input.value.trim()) {
+          isValid = false;
+          input.style.border = "1px solid red";
+      } else {
+          input.style.border = "";
+      }
+  });
+
+  const errorMsg = document.getElementById('errorMsg');
+  if (!isValid) {
+      errorMsg.textContent = "Please fill all required fields!";
+      errorMsg.style.display = "block";
+      return false;
+  }
+  return true;
+}

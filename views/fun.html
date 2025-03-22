@@ -24,15 +24,32 @@
 
     <div class="main">
         <button id="showListBtn">Click to see my hobbies</button>
-        <ul class="hidden-list">
-            <li>Mountaineering</li>
-            <li>Urban Exploration</li>
-            <li>Playing piano</li>
-            <li>Eating food</li>
-            <li>Chefing it up</li>
-            <img src="../static/elevator.jpeg" width="200">
-        </ul>
-        <script>
+        <div class="item1">
+            <h2>My Hobbies</h2>
+            <ul>
+                <li>Mountaineering</li>
+                <li>Urban Exploration</li>
+                <li>Playing piano</li>
+                <li>Eating food</li>
+                <li>Chefing it up</li>
+            </ul>
+        </div>
+        <div class="item2">
+        <img src="../static/elevator.jpeg" width="200">
+        </div>
+        <div class="item3">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/v=cX24KlL8klY" 
+                    frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="item4">
+            <div class="advice-container">
+                <h2>Need Advice?</h2>
+                <p id="adviceText">Click the button below!</p>
+                <button class="advice-btn" onclick="getAdvice()">Get Advice</button>
+            </div>
+        </div>
+    </div>
+        <!-- <script>
             document.querySelector('.hidden-list').style.display = 'none';
     
             document.getElementById('showListBtn').addEventListener('click', function() {
@@ -46,7 +63,7 @@
                 }
             });
         </script>
-        </div>
+        </div> -->
 
     <footer>
         <p>&copy; Jerry Chen Inc. All rights reserved. Current year: <span id="copyYear"></span></p>
