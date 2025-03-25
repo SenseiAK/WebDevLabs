@@ -113,5 +113,38 @@ iframe {
     border-radius: 100%;
     border: 3px solid #2c5f2d;
   }
-  
+
+.hamburger {
+    display: none; /* Hidden by default */
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Active Link Styling */
+.nav-links a.active {
+    color: #2c5f2d;
+    font-weight: bold;
+    border-bottom: 2px solid #2c5f2d;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .hamburger {
+        display: block !important;
+    }
+}
 }

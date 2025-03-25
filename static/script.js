@@ -142,4 +142,30 @@ function validateForm() {
       return false;
   }
   return true;
+  // Mobile Menu Toggle
+document.querySelector('.hamburger').addEventListener('click', () => {
+  document.querySelector('.nav-links').classList.toggle('active');
+});
+
+// Active Link Highlighting
+function highlightActiveLink() {
+  const currentPath = window.location.pathname.split('/').pop();
+  document.querySelectorAll('.nav-links a').forEach(link => {
+      if (link.getAttribute('href') === currentPath) {
+          link.classList.add('active');
+      }
+  });
+}
+highlightActiveLink();
+
+// CSS Animation (Example: Header pulse)
+const header = document.querySelector('header');
+header.style.animation = 'pulse 2s infinite';
+
+// Add to style.css:
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
 }

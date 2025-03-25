@@ -1,0 +1,32 @@
+/* Grid Layout */
+.container {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+    gap: 1rem;
+}
+
+.header { grid-area: header; }
+.navbar { grid-area: nav; }
+.main-content { grid-area: main; }
+.footer { grid-area: footer; }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+    }
+    
+    .hamburger {
+        display: block !important;
+        font-size: 1.5rem;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+}
